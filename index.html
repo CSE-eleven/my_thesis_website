@@ -55,7 +55,7 @@
     .animated-button {
         animation: buttonLoad 0.5s ease-out;
     }
-
+</style>
   <script>
   async function getNgrokUrl() {
       let response = await fetch('https://raw.githubusercontent.com/CSE-eleven/my_thesis_website/main/ngrok_url.txt');
@@ -64,9 +64,6 @@
   }
   window.onload = getNgrokUrl;
   </script>
-
-    
-</style>
 </head>
 <body>
   <header class="header">
