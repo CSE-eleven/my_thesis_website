@@ -56,14 +56,20 @@
         animation: buttonLoad 0.5s ease-out;
     }
 </style>
+  
   <script>
-  async function getNgrokUrl() {
-      let response = await fetch('https://raw.githubusercontent.com/CSE-eleven/my_thesis_website/main/ngrok_url.txt');
-      let url = await response.text();
-      document.getElementById('ngrok-link').href = url.trim();
-  }
-  window.onload = getNgrokUrl;
+    async function getNgrokUrl() {
+        try {
+            let response = await fetch('https://raw.githubusercontent.com/CSE-eleven/my_thesis_website/main/ngrok_url.txt');
+            let url = await response.text();
+            document.getElementById('ngrok-link').href = url.trim();
+        } catch (error) {
+            console.error("Error fetching Ngrok URL:", error);
+        }
+    }
+    window.onload = getNgrokUrl;
   </script>
+
 </head>
 <body>
   <header class="header">
