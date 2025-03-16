@@ -55,6 +55,17 @@
     .animated-button {
         animation: buttonLoad 0.5s ease-out;
     }
+
+  <script>
+  async function getNgrokUrl() {
+      let response = await fetch('https://raw.githubusercontent.com/CSE-eleven/my_thesis_website/main/ngrok_url.txt');
+      let url = await response.text();
+      document.getElementById('ngrok-link').href = url.trim();
+  }
+  window.onload = getNgrokUrl;
+  </script>
+
+    
 </style>
 </head>
 <body>
@@ -71,7 +82,7 @@
         <h2>Early Diagnosis of Oral Squamous Cell Carcinoma (OSCC): An Explainable Deep Learning Approach on Screening Image Data</h1>
         <p class="banner-text">My research focuses on deep learning and medical image analysis, particularly in the early diagnosis of Oral Squamous Cell Carcinoma (OSCC).</p>
         <p class="banner-text"> and need your assistance in preparing and organizing my dataset. I've created a Colab+Ngrok setup that allows you to directly help me by classifying or organizing the data in a way that aligns with my research needs</p>
-        <a href="https://5fa4-34-139-207-16.ngrok-free.app/"><button class="button-p animated-button">Click to Sort Dataset</button></a>
+        <a href="ngrok-link"><button class="button-p animated-button">Click to Sort Dataset</button></a>
       </div>
     </div>
   </header>
